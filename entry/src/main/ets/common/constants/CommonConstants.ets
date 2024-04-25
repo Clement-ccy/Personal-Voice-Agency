@@ -23,6 +23,7 @@ export class CommonConstants {
   static readonly IMAGE_CONTAINER_HEIGHT: string = '42%';
   static readonly FULL_SIZE: string = '100%';
   static readonly ICON_SIZE: string = '30';
+  static readonly LIST_ICON_SIZE: string = '20';
   static readonly BAR_WEIGHT: string = '25%';
   static readonly BAR_HEIGHT: string = '10%';
   static readonly CONTENT_WIDTH_PERCENT: string = '87%';

@@ -2,8 +2,13 @@
   "src": [
     "pages/Splash",
     "pages/MainPage",
-    "pages/voice/VoiceCombination",
-    "pages/voice/VoiceTrain",
-    "pages/voice/VoiceTransfer"
+    "pages/voice/VoiceCombinationPage",
+    "pages/voice/VoiceTrainPage",
+    "pages/voice/VoiceTransferPage",
+    "pages/me/MyPostPage",
+    "pages/me/SubscriptionPage",
+    "pages/me/FavouritePage",
+    "pages/me/SettingPage",
+    "pages/me/ProfilePage"
   ]
 }

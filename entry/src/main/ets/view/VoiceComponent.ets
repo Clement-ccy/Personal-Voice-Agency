@@ -5,17 +5,17 @@ import { onJumpClick } from '../common/utils/RooterUtil'
 const voicePage: Array<PagesPathModel> = [
   {
     name: '转化',
-    address: 'pages/voice/VoiceTransfer'
+    address: 'pages/voice/VoiceTransferPage'
   },
 
   {
     name: '声音融合',
-    address: 'pages/voice/VoiceCombination'
+    address: 'pages/voice/VoiceCombinationPage'
   },
 
   {
     name: '声音训练',
-    address: 'pages/voice/VoiceTrain'
+    address: 'pages/voice/VoiceTrainPage'
   }
 ]
 
