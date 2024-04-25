@@ -1,0 +1,9 @@
+{
+  "src": [
+    "pages/Splash",
+    "pages/MainPage",
+    "pages/voice/VoiceCombination",
+    "pages/voice/VoiceTrain",
+    "pages/voice/VoiceTransfer"
+  ]
+}
