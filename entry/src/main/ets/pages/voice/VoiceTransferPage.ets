@@ -8,7 +8,13 @@ struct VoiceTransferPage {
     Column() {
       Title({pageTitle:'声音转化'})
       Column() {
-        Text("这是声音转化页面")
+        Stack(){
+          Image($r('app.media.btn_empty'))
+          Column(){
+            Image($r('app.media.ic_loudspeaker'))
+            Text("这是声音转化页面")
+          }
+        }
       }
     }
     .width(Const.FULL_PERCENT)

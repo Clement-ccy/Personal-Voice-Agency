@@ -1,7 +1,7 @@
 import { CommonConstants as Const } from '../common/constants/CommonConstants';
-import { Voice } from '../view/VoiceComponent';
-import { Discover } from '../view/DiscoverComponent';
-import { Me } from '../view/MeComponent';
+import { Voice } from '../component/view/VoiceComponent';
+import { Discover } from '../component/view/DiscoverComponent';
+import { Me } from '../component/view/MeComponent';
 
 interface BottomTabsItem {
   icon: Resource;
@@ -55,16 +55,16 @@ struct MainPage {
 
   pageTransition() {
     // 定义页面进入时的效果，从右侧滑入，时长为1000ms，页面栈发生push操作时该效果才生效
-    PageTransitionEnter({ type: RouteType.Push, duration: 100 })
+    PageTransitionEnter({ type: RouteType.Push, duration: 50 })
       .slide(SlideEffect.Right)
     // 定义页面进入时的效果，从左侧滑入，时长为1000ms，页面栈发生pop操作时该效果才生效
-    PageTransitionEnter({ type: RouteType.Pop, duration: 100 })
+    PageTransitionEnter({ type: RouteType.Pop, duration: 50 })
       .slide(SlideEffect.Left)
     // 定义页面退出时的效果，向左侧滑出，时长为1000ms，页面栈发生push操作时该效果才生效
-    PageTransitionExit({ type: RouteType.Push, duration: 100 })
+    PageTransitionExit({ type: RouteType.Push, duration: 50 })
       .slide(SlideEffect.Left)
     // 定义页面退出时的效果，向右侧滑出，时长为1000ms，页面栈发生pop操作时该效果才生效
-    PageTransitionExit({ type: RouteType.Pop, duration: 100 })
+    PageTransitionExit({ type: RouteType.Pop, duration: 50 })
       .slide(SlideEffect.Right)
   }
 

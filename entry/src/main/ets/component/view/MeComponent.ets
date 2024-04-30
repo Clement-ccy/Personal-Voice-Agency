@@ -1,6 +1,6 @@
-import { CommonConstants as Const } from '../common/constants/CommonConstants';
-import { PagesPathModel } from '../common/model/PagesPathModel'
-import { onJumpClick } from '../common/utils/RooterUtil'
+import { CommonConstants as Const } from '../../common/constants/CommonConstants';
+import { PagesPathModel } from '../../common/model/PagesPathModel'
+import { onJumpClick } from '../../common/utils/RooterUtil'
 
 const mePage: Array<PagesPathModel> = [
   {
@@ -31,6 +31,7 @@ const mePage: Array<PagesPathModel> = [
 export struct Me {
   build() {
     Column() {
+
       //个人资料--------------------------------------------------------------
       Column(){
         Column(){

@@ -1,6 +1,6 @@
-import { CommonConstants as Const } from '../common/constants/CommonConstants';
-import { PagesPathModel } from '../common/model/PagesPathModel'
-import { onJumpClick } from '../common/utils/RooterUtil'
+import { CommonConstants as Const } from '../../common/constants/CommonConstants';
+import { PagesPathModel } from '../../common/model/PagesPathModel'
+import { onJumpClick } from '../../common/utils/RooterUtil'
 
 const voicePage: Array<PagesPathModel> = [
   {

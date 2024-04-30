@@ -93,8 +93,8 @@ struct Splash {
           Swiper(this.swiperController) {
             ForEach(this.data, (item: Resource) => {
               Image(item)
-                .width(Const.FULL_SIZE)
-                .height(Const.FULL_SIZE)
+                .width(Const.FULL_PERCENT)
+                .height(Const.FULL_PERCENT)
                 .objectFit(ImageFit.Cover)
             })
           }
@@ -125,7 +125,7 @@ struct Splash {
           .borderRadius($r('app.float.10'))
           .textAlign(TextAlign.Center)
           .position({
-            x: Const.PERCENTAGE_78,
+            x: '78%',
             y: $r('app.float.35')
           })
         } else { // 应用启动画面
@@ -136,7 +136,7 @@ struct Splash {
             .width($r('app.float.192'))
             .height($r('app.float.192'))
             .offset({
-              y: `-${Const.PERCENTAGE_15}`
+              y: `-${'15%'}`
             })
             .objectFit(ImageFit.Contain)
 
@@ -154,12 +154,12 @@ struct Splash {
               })
           }
           .offset({
-            y: Const.PERCENTAGE_25
+            y: '25%'
           })
         }
       }
     }
-    .height(Const.FULL_SIZE)
-    .width(Const.FULL_SIZE)
+    .height(Const.FULL_PERCENT)
+    .width(Const.FULL_PERCENT)
   }
 }

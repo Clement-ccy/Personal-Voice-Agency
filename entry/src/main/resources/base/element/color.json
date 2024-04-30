@@ -21,6 +21,10 @@
       "value": "#EEEEEE"
     },
     {
+      "name": "font_selected",
+      "value": "#0064D7"
+    },
+    {
       "name": "line_grey_light",
       "value": "#33EEEEEE"
     },

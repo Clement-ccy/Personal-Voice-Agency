@@ -2,7 +2,7 @@ import {onJumpClick} from '../../common/utils/RooterUtil'
 
 
 @Component
-export default struct TextListItemCustom {
+export default struct TextListItem {
   @Prop name: string
   @Prop address: string
 

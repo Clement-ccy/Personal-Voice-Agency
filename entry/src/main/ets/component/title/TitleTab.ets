@@ -1,107 +1,93 @@
-/*
- * @author 鼓捣JIA
- * @date 2024/02/25 09:35
- */
-
+import { CommonConstants as Const } from '../../common/constants/CommonConstants';
 @Component
 export default struct TitleTab {
   @Link selectTab: number
-  @Prop interface: boolean
-  @Prop property: boolean
-  @Prop common: boolean
+  @Prop recommend: boolean
+  @Prop creativeWorkshop: boolean
 
   build() {
-    Row({ space: 32 }) {
-      if (this.interface) {
+    Row() {
+      if (this.recommend) {
         if (this.selectTab === 0) {
-          Column() {
-            Text('接口')
-              .fontColor($r('app.color.brand'))
-              .textAlign(TextAlign.Center)
+          Stack({ alignContent: Alignment.Bottom }) {
+            Text('推荐')
+              .fontColor($r('app.color.font_selected'))
               .fontWeight(500)
+              .width('100%')
+              .height('100%')
+              .textAlign(TextAlign.Center)
+              .align(Alignment.Top)
+            Rect({width:'100%',height:'3'})
+              .align(Alignment.Bottom)
+              .fill($r('app.color.font_selected'))
+              .transition({ type: TransitionType.Insert, scale: { x: 0.85, y: 0.85 } })
           }
-          .width(60)
-          .height(24)
-          .alignItems(HorizontalAlign.Center)
-          .justifyContent(FlexAlign.Center)
-          .borderRadius(12)
-          .backgroundColor($r('app.color.brand_light'))
-          .transition({ type: TransitionType.Insert, opacity: 0.5, scale: { x: 0.85, y: 0.85 } })
+          .width(Const.HALF_PERCENT)
+          .height(Const.FULL_PERCENT)
+          .margin({ top: 5 })
         } else {
-          Text('接口')
-            .fontColor($r('app.color.font_normal'))
-            .textAlign(TextAlign.Center)
-            .width(60)
-            .onClick(() => {
-              animateTo({ duration: 200 }, () => {
-                this.selectTab = 0
-              })
+          Stack({ alignContent: Alignment.Bottom }) {
+            Text('推荐')
+              .fontColor($r('app.color.font_normal'))
+              .width('100%')
+              .height('100%')
+              .textAlign(TextAlign.Center)
+              .align(Alignment.Top)
+          }
+          .width(Const.HALF_PERCENT)
+          .height(Const.FULL_PERCENT)
+          .margin({ top: 5 })
+          .onClick(() => {
+            animateTo({ duration: 200 }, () => {
+              this.selectTab = 0
             })
+          })
         }
       }
 
-      if (this.property) {
+      if (this.creativeWorkshop) {
         if (this.selectTab === 1) {
-          Column() {
-            Text('属性')
-              .fontColor($r('app.color.brand'))
-              .textAlign(TextAlign.Center)
+          Stack({ alignContent: Alignment.Bottom }) {
+            Text('创意工坊')
+              .fontColor($r('app.color.font_selected'))
               .fontWeight(500)
-          }
-          .width(60)
-          .height(24)
-          .alignItems(HorizontalAlign.Center)
-          .justifyContent(FlexAlign.Center)
-          .borderRadius(12)
-          .backgroundColor($r('app.color.brand_light'))
-          .transition({ type: TransitionType.Insert, opacity: 0.5, scale: { x: 0.85, y: 0.85 } })
-
-        } else {
-          Text('属性')
-            .fontColor($r('app.color.font_normal'))
-            .textAlign(TextAlign.Center)
-            .width(60)
-            .onClick(() => {
-              animateTo({ duration: 200 }, () => {
-                this.selectTab = 1
-              })
-            })
-        }
-      }
-
-      if (this.common) {
-        if (this.selectTab === 2) {
-          Column() {
-            Text('通用')
-              .fontColor($r('app.color.brand'))
+              .width('100%')
+              .height('100%')
               .textAlign(TextAlign.Center)
-              .fontWeight(500)
+              .align(Alignment.Top)
+            Rect({width:'100%',height:'3'})
+              .align(Alignment.Bottom)
+              .fill($r('app.color.font_selected'))
+              .transition({ type: TransitionType.Insert, scale: { x: 0.85, y: 0.85 } })
           }
-          .width(60)
-          .height(24)
-          .alignItems(HorizontalAlign.Center)
-          .justifyContent(FlexAlign.Center)
-          .borderRadius(12)
-          .backgroundColor($r('app.color.brand_light'))
-          .transition({ type: TransitionType.Insert, opacity: 0.5, scale: { x: 0.85, y: 0.85 } })
+          .width(Const.HALF_PERCENT)
+          .height(Const.FULL_PERCENT)
+          .margin({ top: 5 })
         } else {
-          Text('通用')
-            .fontColor($r('app.color.font_normal'))
-            .textAlign(TextAlign.Center)
-            .width(60)
-            .onClick(() => {
-              animateTo({ duration: 200 }, () => {
-                this.selectTab = 2
-              })
+          Stack({ alignContent: Alignment.Bottom }) {
+            Text('创意工坊')
+              .fontColor($r('app.color.font_normal'))
+              .width('100%')
+              .height('100%')
+              .textAlign(TextAlign.Center)
+              .align(Alignment.Top)
+          }
+          .width(Const.HALF_PERCENT)
+          .height(Const.FULL_PERCENT)
+          .margin({ top: 5 })
+          .onClick(() => {
+            animateTo({ duration: 200 }, () => {
+              this.selectTab = 1
             })
+          })
         }
       }
     }
     .height(40)
     .width('100%')
+    .padding(4)
     .justifyContent(FlexAlign.Center)
     .alignItems(VerticalAlign.Center)
-    .padding({ bottom: 4 })
-    .backgroundColor($r('app.color.background_white'))
+    .backgroundColor($r('app.color.list_item'))
   }
 }
