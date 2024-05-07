@@ -9,6 +9,7 @@
     "pages/me/SubscriptionPage",
     "pages/me/FavouritePage",
     "pages/me/SettingPage",
-    "pages/me/ProfilePage"
+    "pages/me/ProfilePage",
+    "pages/me/AboutPage"
   ]
 }

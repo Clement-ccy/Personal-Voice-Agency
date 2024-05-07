@@ -1,4 +1,5 @@
 import {CommonConstants as Const} from '../../common/constants/CommonConstants'
+import { WorkshopView } from '../../component/list/WorkshopView'
 import Title from '../../component/title/Title'
 
 @Entry
@@ -8,7 +9,7 @@ struct FavouritePage {
     Column() {
       Title({pageTitle:'收藏'})
       Column() {
-        Text("这是收藏页面")
+        WorkshopView()
       }
     }
     .width(Const.FULL_PERCENT)

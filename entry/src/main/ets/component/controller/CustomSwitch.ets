@@ -12,7 +12,7 @@ export default struct CustomSwitch {
     Column() {
       Row() {
         Text(this.name)
-          .fontColor('#333333')
+          .fontColor('#FFFFFF')
         Blank()
         Toggle({ type: ToggleType.Switch, isOn: this.isOn })
           .selectedColor('#0055FF')

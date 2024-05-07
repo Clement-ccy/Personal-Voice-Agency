@@ -25,6 +25,11 @@ const mePage: Array<PagesPathModel> = [
     name: '设置',
     address: 'pages/me/SettingPage'
   },
+  {
+    icon: $r('app.media.ic_about'),
+    name: '关于',
+    address: 'pages/me/AboutPage'
+  },
 ]
 
 @Component

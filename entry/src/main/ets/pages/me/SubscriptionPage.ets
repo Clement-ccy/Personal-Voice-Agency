@@ -1,4 +1,5 @@
 import {CommonConstants as Const} from '../../common/constants/CommonConstants'
+import { SubscriptionView } from '../../component/list/SubscriptionView'
 import Title from '../../component/title/Title'
 
 @Entry
@@ -8,7 +9,7 @@ struct SubscriptionPage {
     Column() {
       Title({pageTitle:'关注'})
       Column() {
-        Text("这是关注页面")
+        SubscriptionView()
       }
     }
     .width(Const.FULL_PERCENT)

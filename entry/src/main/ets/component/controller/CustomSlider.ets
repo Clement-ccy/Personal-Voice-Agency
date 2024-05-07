@@ -1,8 +1,3 @@
-/*
- * @author 鼓捣JIA
- * @date 2023/12/03 23:35
- */
-
 @Component
 export default struct CustomSlider {
   @Prop name: string
@@ -15,7 +10,7 @@ export default struct CustomSlider {
     Column() {
       Row() {
         Text(this.name)
-          .fontColor('#333333')
+          .fontColor('#FFFFFF')
         Blank()
 
         Slider({ value: this.value, min: this.min, max: this.max, step: this.step ? this.step : 1 })

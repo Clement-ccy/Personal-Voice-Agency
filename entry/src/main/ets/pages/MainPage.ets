@@ -49,6 +49,7 @@ struct MainPage {
     .backgroundColor($r('app.color.bottom_tabs_background_color'))
   }
 
+  //改变bar的index
   onIndexChange() {
     this.controller.changeIndex(this.bottomTabIndex);
   }

@@ -1,9 +1,13 @@
 import { CommonConstants as Const } from '../../common/constants/CommonConstants';
+import { RecommendView } from '../list/RecommendView';
+import { WorkshopView } from '../list/WorkshopView';
 import TitleTab from '../title/TitleTab';
 
 @Component
 export struct Discover {
-  @State selectTab: number = 1
+
+  @StorageLink("netIsAvailable") netIsAvailable: boolean = true;
+  @State selectTab: number = 0
   @State changeValue: string = ''
   @State submitValue: string = ''
 
@@ -27,11 +31,29 @@ export struct Discover {
             this.changeValue = value
           })
           .margin(20)
+
         TitleTab({ selectTab: $selectTab, recommend:true, creativeWorkshop:true })
           .width(Const.FULL_PERCENT)
       }
       .width(Const.FULL_PERCENT)
       .backgroundColor($r('app.color.list_item'))
+
+      //内容
+      if (!this.netIsAvailable) {
+        Text('网络不给力，请检查网络设置。')
+          .width('100%')
+          .fontSize(14).textAlign(TextAlign.Center)
+          .padding({ top: 16, bottom: 16 })
+          .backgroundColor("#ffe1df")
+      }
+      else {
+        if (this.selectTab === 0) {
+          RecommendView()
+        }
+        else {
+          WorkshopView()
+        }
+      }
     }
     .width(Const.FULL_PERCENT)
     .height(Const.FULL_PERCENT)

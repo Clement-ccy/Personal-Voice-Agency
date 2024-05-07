@@ -10,15 +10,16 @@ export default struct CustomSelect {
   build() {
     Column() {
       Row() {
-        Text(this.name)
-          .fontColor('#333333')
-        Blank()
-        Select(this.valuesList)
-          .fontColor('#666666')
-          .value(this.valuesList[0].value)
-          .onSelect((index: number, _) => {
-            this.selectItem = this.itemsList[index]
-          })
+        Column(){
+          Text(this.name)
+            .fontColor('#FFFFFF')
+          Select(this.valuesList)
+            .fontColor('#666666')
+            .value(this.valuesList[0].value)
+            .onSelect((index: number, _) => {
+              this.selectItem = this.itemsList[index]
+            })
+        }
       }
       .width('100%')
       .height(50)
