@@ -10,6 +10,7 @@
     "pages/me/FavouritePage",
     "pages/me/SettingPage",
     "pages/me/ProfilePage",
-    "pages/me/AboutPage"
+    "pages/me/AboutPage",
+    "pages/testPage"
   ]
 }

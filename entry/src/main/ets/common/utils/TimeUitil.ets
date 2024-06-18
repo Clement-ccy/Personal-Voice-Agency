@@ -1,6 +1,6 @@
 import { CommonConstants as Const } from '../constants/CommonConstants';
 
-export default class Utils {
+export default class TimeUtils {
   /**
    * Convert timestamp to time.
    * @param timestamp

@@ -1,5 +1,7 @@
+import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import hilog from '@ohos.hilog';
+import Want from '@ohos.app.ability.Want';
 import window from '@ohos.window';
 
 export default class EntryAbility extends UIAbility {
@@ -14,7 +16,8 @@ export default class EntryAbility extends UIAbility {
   onWindowStageCreate(windowStage: window.WindowStage) {
     // Main window is created, set main page for this ability
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
-
+    let context = this.context;
+    let pathDir = context.filesDir;
     // 加载Splash页面
     windowStage.loadContent('pages/Splash', (err, data) => {
       if (err.code) {

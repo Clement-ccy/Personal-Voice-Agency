@@ -1,4 +1,21 @@
+import { Permissions } from '@ohos.abilityAccessCtrl';
+
 export class CommonConstants {
+  /**
+   * Permissions.
+   */
+  static readonly INTERNET: Permissions = 'ohos.permission.INTERNET';
+  static readonly MEDIA_LOCATION: Permissions = 'ohos.permission.MEDIA_LOCATION';
+  static readonly READ_MEDIA: Permissions = 'ohos.permission.READ_MEDIA';
+  static readonly WRITE_MEDIA: Permissions = 'ohos.permission.WRITE_MEDIA';
+  static readonly MICROPHONE: Permissions = 'ohos.permission.MICROPHONE';
+
+  /**
+   * 上传下载请求
+   */
+  static readonly URL: String = 'http://192.168.31.70:5000';
+  static readonly HTTP_READ_TIMEOUT: number = 30000;
+
   /**
    * 组件尺寸
    */
@@ -14,6 +31,11 @@ export class CommonConstants {
   static readonly SEARCHBAR_WIDTH: string = '91.1%'
   static readonly IMAGE_HEIGHT_MIN: string = '78%';
 
+  /**
+   * 组件位置
+   */
+  static readonly POSITION_X: string = '50%';
+  static readonly POSITION_Y: string = '90%';
   /**
    * 组件常数
    */
@@ -54,6 +76,13 @@ export class CommonConstants {
   static readonly STRING_TIME: string = '00:00:00';
 
   /**
+   * Constants of checking permissions. 系统请求警告
+   */
+  static readonly NUMBER_5: number = 5;
+  static readonly TITLE: string = '警告';
+  static readonly MESSAGE: string = '没有权限，请自行去<设置>添加权限';
+
+  /**
    * State of player or recorder. 播放器和录音器状态
    */
   static readonly IDLE: string = 'idle';
@@ -84,11 +113,4 @@ export class CommonConstants {
   static readonly STATUS_BAR_CONTENT_COLOR: string = '#ffffff';
   static readonly NAVIGATION_BAR_CONTENT_COLOR: string = '#ffffff';
   static readonly THEME_COLOR: string = '#c82424';
-}
-
-/**
- * 上传下载请求
- */
-export class NetworkConstants {
-  static readonly URL: String = 'http://192.168.31.70:5000';
 }

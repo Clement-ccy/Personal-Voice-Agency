@@ -1,6 +1,6 @@
 import {CommonConstants as Const} from '../../common/constants/CommonConstants'
 import { SettingSwitchItem } from '../../component/controller/SettingSwitchItem';
-import { SettingTextItem } from '../../component/controller/SettingTextItem';
+import { SettingSelectItem } from '../../component/controller/SettingSelectItem';
 import Title from '../../component/title/Title'
 
 @Entry
@@ -68,9 +68,9 @@ struct SettingPage {
         .margin({ top: 24, bottom: 8 })
       SettingSwitchItem({ title: "默认打开弹幕", value: $openDanmu })
       this.ItemDivider()
-      SettingTextItem({ title: "弹幕字体大小", value: $danmuFontSize, arr: this.danmuFontSizeArr })
+      SettingSelectItem({ title: "弹幕字体大小", value: $danmuFontSize, arr: this.danmuFontSizeArr })
       this.ItemDivider()
-      SettingTextItem({ title: "弹幕不透明度", value: $danmuOpacity, arr: this.danmuOpacityArr })
+      SettingSelectItem({ title: "弹幕不透明度", value: $danmuOpacity, arr: this.danmuOpacityArr })
     }.borderRadius(18)
     .padding({ left: 16, right: 16 })
     .margin({ top: 24 })
@@ -88,9 +88,9 @@ struct SettingPage {
         .margin({ top: 24, bottom: 8 })
       SettingSwitchItem({ title: "详情页直接播放", value: $pagePlayOver })
       this.ItemDivider()
-      SettingTextItem({ title: "偏好画质", value: $videoQuality, arr: this.videoQualityArr })
+      SettingSelectItem({ title: "偏好画质", value: $videoQuality, arr: this.videoQualityArr })
       this.ItemDivider()
-      SettingTextItem({ title: "播放速度", value: $playSpeed, arr: this.playSpeedArr })
+      SettingSelectItem({ title: "播放速度", value: $playSpeed, arr: this.playSpeedArr })
     }.borderRadius(18)
     .padding({ left: 16, right: 16 })
     .margin({ top: 24 })

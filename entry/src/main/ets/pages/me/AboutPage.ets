@@ -1,6 +1,6 @@
 import {CommonConstants as Const} from '../../common/constants/CommonConstants'
 import { SettingSwitchItem } from '../../component/controller/SettingSwitchItem';
-import { SettingTextItem } from '../../component/controller/SettingTextItem';
+import { SettingSelectItem } from '../../component/controller/SettingSelectItem';
 import { SettingRow } from '../../component/list/SettingRow';
 import Title from '../../component/title/Title'
 

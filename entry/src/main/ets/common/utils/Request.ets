@@ -1,7 +1,8 @@
-import request from '@ohos.request';
 import common from '@ohos.app.ability.common';
-export function uploadWav() {
-  let context: common.Context;
+import request from '@ohos.request';
+import fs from '@ohos.file.fs';
+
+export function uploadAudio() {
   let uploadTask;
   let uploadConfig = {
     url: 'http://192.168.31.70:5000/upload', //需要手动替换为真实服务器地址
@@ -25,26 +26,41 @@ export function uploadWav() {
   }
 }
 
-export function downloadWav() {
-  let context: common.Context;
+export function downloadAudio() {
+  let context = getContext(this) as common.UIAbilityContext;
+  let fileDir = context.filesDir;
+
+  //文件如果已经存在，就删除
+  if (fs.accessSync(fileDir + 'test.mp3')) {
+    fs.unlink(fileDir + 'test.mp3')
+  }
+
   let downloadTask;
   let downloadConfig = {
-    url: 'http://192.168.31.70:5000/get_processed_file/processed_yourfile.wav', //需要手动替换为真实服务器地址
-    enableMetered: false, //设置是否允许在按流量计费的连接下下载
-    enableRoaming: false, //设置是否允许在漫游网络中下载
+    url: 'http://downsc.chinaz.net/Files/DownLoad/sound1/201906/11582.mp3', //需要手动替换为真实服务器地址
     description: 'downloading processed file',
-    filePath: context.filesDir + '/audio_processed' + '/test_processed.wav',
-    networkType: 0x00000001&0x00010000, //设置允许下载的网络类型(默认使用NETWORK_MOBILE&NETWORK_WIFI)
-    title:'111',
-    background:false
+    header: {
+    'Accept-Encoding': 'gzip, deflate, br',
+    'Accept-Language': 'zh-CN,zh;q=0.9',
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+    },
+    filePath: fileDir + 'test.mp3',
   };
   try {
-    request.downloadFile(globalThis.abilityContext, downloadConfig).then((data) => {
+    request.downloadFile(context, downloadConfig).then((data) => {
       downloadTask = data;
       let progressCallback = (receivedSize, totalSize) => {
         console.info("download receivedSize:" + receivedSize + " totalSize:" + totalSize);
       };
       downloadTask.on('progress', progressCallback);
+      downloadTask.on('complete',()=>{
+        console.info('download complete');
+        let file = fs.openSync(fileDir + '/test.mp3', fs.OpenMode.READ_WRITE);
+        let buf = new ArrayBuffer(1024);
+        let readLen = fs.readSync(file.fd, buf);
+        console.info(`The content of file: ${String.fromCharCode.apply(null, new Uint8Array(buf.slice(0, readLen)))}`);
+        fs.closeSync(file);
+      })
     }).catch((err) => {
       console.error('Failed to request the download. Cause: ' + JSON.stringify(err));
     })

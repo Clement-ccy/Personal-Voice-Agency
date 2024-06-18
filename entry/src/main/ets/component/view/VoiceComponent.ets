@@ -5,7 +5,8 @@ import { onJumpClick } from '../../common/utils/RooterUtil'
 const voicePage: Array<PagesPathModel> = [
   {
     name: '转化',
-    address: 'pages/voice/VoiceTransferPage'
+    // address: 'pages/voice/VoiceTransferPage'
+    address: 'pages/testPage'
   },
 
   {

@@ -5,6 +5,10 @@
       "value": "#FFFFFF"
     },
     {
+      "name": "background_color",
+      "value": "#011838"
+    },
+    {
       "name": "bottom_tabs_background_color",
       "value": "#152848"
     },

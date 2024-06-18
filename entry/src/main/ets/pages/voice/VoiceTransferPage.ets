@@ -4,10 +4,29 @@ import CustomSelect from '../../component/controller/CustomSelect';
 import CustomSlider from '../../component/controller/CustomSlider';
 import CustomSwitch from '../../component/controller/CustomSwitch';
 import Title from '../../component/title/Title';
+import AudioData from '../../common/model/AudioDataModel';
+import { downloadAudio } from '../../common/utils/Request';
 
 @Entry
 @Component
 struct VoiceTransferPage {
+  //音频
+  @State selectedAudio: AudioData = {
+    name: '',
+    uri: '',
+    size: 0,
+    time: 0,
+    duration: 0,
+    height: ''
+  }
+  @State transferredAudio: AudioData = {
+    name: '',
+    uri: '',
+    size: 0,
+    time: 0,
+    duration: 0,
+    height: ''
+  }
   //type Button 样式
   @State model: string = '出音味来-673'
   @State modelArr: string[] = [
@@ -41,6 +60,9 @@ struct VoiceTransferPage {
         //转化箭头
         Row(){
           Button('开始转化')
+            .onClick(()=>{
+              downloadAudio()
+            })
           Blank(50)
           Image($r('app.media.ic_vector')).height(90)
           CustomSelect({

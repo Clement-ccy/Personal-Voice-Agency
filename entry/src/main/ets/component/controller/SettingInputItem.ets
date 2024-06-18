@@ -1,6 +1,6 @@
 
 @Component
-export struct SettingTextItem {
+export struct SettingInputItem {
   private title: string;
   @Link value: string;
   private arr: string[] = [];

@@ -1,6 +1,6 @@
 import {CommonConstants as Const} from '../../common/constants/CommonConstants'
 import { SettingSwitchItem } from '../../component/controller/SettingSwitchItem';
-import { SettingTextItem } from '../../component/controller/SettingTextItem';
+import { SettingSelectItem } from '../../component/controller/SettingSelectItem';
 import Title from '../../component/title/Title'
 
 @Entry
@@ -44,15 +44,15 @@ struct ProfilePage {
         .margin({ top: 24, bottom: 8 })
       SettingSwitchItem({ title: "头像", value: $avatar })
       this.ItemDivider()
-      SettingTextItem({ title: "昵称", value: $userName, arr: this.userNameArr })
+      SettingSelectItem({ title: "昵称", value: $userName, arr: this.userNameArr })
       this.ItemDivider()
       SettingSwitchItem({ title: "性别", value: $gender })
       this.ItemDivider()
-      SettingTextItem({ title: "出生年月", value: $birthday, arr: this.birthdayArr })
+      SettingSelectItem({ title: "出生年月", value: $birthday, arr: this.birthdayArr })
       this.ItemDivider()
-      SettingTextItem({ title: "个性签名", value: $tickle, arr: this.tickleArr })
+      SettingSelectItem({ title: "个性签名", value: $tickle, arr: this.tickleArr })
       this.ItemDivider()
-      SettingTextItem({ title: "学校", value: $school, arr: this.schoolArr })
+      SettingSelectItem({ title: "学校", value: $school, arr: this.schoolArr })
     }
     .padding({ left: 16, right: 16 })
     .margin({ top: 24 })
